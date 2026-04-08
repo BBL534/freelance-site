@@ -271,10 +271,17 @@
   }
 
   /* CGV */
-  .cgv{
-    padding: 25px 20px;
-    font-size: 0.9rem;
-  }
+
+
+#cgv .cgv {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 15px;
+}
+
+#cgv .cgv-card {
+  padding: 18px;
+}
 
   /* FOOTER */
   footer{
@@ -283,4 +290,25 @@
   }
 }
 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.7);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 <script>
+
