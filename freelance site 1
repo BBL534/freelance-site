@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecte de visibilité digitale | Ludivine Bigot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --gold:#c5a880;
+  --bg:#0d0d0d;
+  --bg2:#1a1a1a;
+  --card:#222;
+  --text:#eee;
+  --muted:#bbb;
+  --border:#333;
+  --radius:16px;
+  --shadow:0 8px 25px rgba(0,0,0,.5);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Open Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7;}
+
+.navbar{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:var(--bg2); position:sticky; top:0; border-bottom:1px solid var(--border); z-index:100;}
+.logo{font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--gold);}
+.menu{display:flex; gap:25px; list-style:none; align-items:center;}
+.menu a{color:var(--text); text-decoration:none; font-weight:500;}
+.menu a:hover{color:var(--gold);}
+#lang-switch{border:1px solid var(--gold); background:transparent; color:var(--gold); padding:6px 12px; border-radius:8px; cursor:pointer; font-weight:600;}
+#lang-switch:hover{background:var(--gold); color:#111;}
+
+.hero{min-height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('images/hero-bg.jpg') center/cover;}
+.hero-content{max-width:900px; background:var(--bg2); padding:50px; border-radius:var(--radius); box-shadow:var(--shadow);}
+.hero h1{font-family:'Playfair Display',serif; font-size:3rem; margin-bottom:20px;}
+.hero p{color:var(--muted);}
+
+section{padding:90px 20px; max-width:1100px; margin:auto; text-align:center;}
+h2{font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:40px;}
+h2::after{content:""; display:block; width:60px; height:3px; background:var(--gold); margin:12px auto 0;}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px;}
+.card{background:var(--card); padding:28px; border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow);}
+.portfolio-card{height:220px; background-size:cover; background-position:center;}
+
+.contact{background:var(--bg2); padding:60px 40px; border-radius:var(--radius);}
+form{max-width:480px; margin:auto; display:flex; flex-direction:column; gap:16px;}
+input,textarea{padding:14px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text);}
+.btn{background:var(--gold); border:none; padding:14px; border-radius:10px; font-weight:600; cursor:pointer; color:#111;}
+
+#contact-success{margin-top:20px; font-weight:600; font-size:1.1em; text-align:center; display:none;}
+
+.cgv{background:var(--bg2); padding:40px; border-radius:var(--radius); text-align:left;}
+footer{text-align:center; padding:40px; border-top:1px solid var(--border); color:var(--muted);}
+
+.lang{display:none;}
+.lang.active{display:block;}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">LB</div>
+  <ul class="menu">
+    <li><a href="#hero">Accueil / Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button id="lang-switch">EN</button></li>
+  </ul>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content lang fr active">
+    <h1 style="font-family: Playfair Display, serif;">“Product Builder Freelance : Stratégie, Analyse et Technologie”</h1>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">En tant que freelance, j’accompagne particuliers, entrepreneurs, startups, scale-ups et entreprises dans la conception, la structuration et le lancement de produits digitaux performants, scalables et orientés impact.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">Product builder à la croisée de la stratégie, du business et de la technologie, j’interviens de l’idée au déploiement pour transformer des concepts en solutions concrètes, robustes et prêtes à passer à l’échelle.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">Je dispose également d’une formation d’analyste financier ainsi que d’une formation en marketing, me permettant d’intégrer dès l’origine les enjeux de traction, de modèle économique, de rentabilité, de croissance et de business development.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">🎓 Master 2 Management & Gestion de Projet — emlyon business school | Certification CIIA — SFAF | Bootcamp Développement Web — Le Wagon.</p>
+  </div>
+
+  <div class="hero-content lang en">
+    <h1 style="font-family: Playfair Display, serif;">“Freelance Product Builder: Strategy, Analysis & Technology”</h1>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">As a freelance consultant, I help individuals, entrepreneurs, startups, scale-ups and companies design, structure, and launch high-performance, scalable digital products with real impact.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">Product builder at the intersection of strategy, business and technology, I work from idea to deployment to turn concepts into concrete, robust solutions ready to scale.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">I also hold a financial analyst qualification and marketing training, allowing me to integrate traction, business models, profitability, growth and business development from the very start.</p>
+    <p style="font-style: italic; font-family: Georgia, 'Times New Roman', serif;">🎓 Master 2 Management & Project Management — emlyon business school | CIIA Certification — SFAF | Web Development Bootcamp — Le Wagon.</p>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="lang fr active">Services</h2>
+  <h2 class="lang en">Services</h2>
+
+  <div class="grid lang fr active">
+    <div class="card"><h3>Développement Web</h3><p>Sites modernes, performants et évolutifs | SEO.</p></div>
+    <div class="card"><h3>Go to Market</h3><p>Stratégies et analyses de marché pour lancer votre produit/activité.</p></div>
+    <div class="card"><h3>Stratégie Impactante</h3><p>Stratégies | Business Developpment.</p></div>
+  </div>
+
+  <div class="grid lang en">
+    <div class="card"><h3>Web Development</h3><p>Modern, scalable and high-performance websites.</p></div>
+    <div class="card"><h3>Go to Market</h3><p>Market strategies to launch your products.</p></div>
+    <div class="card"><h3>Impact Strategy</h3><p>.</p> Strategy | Business Development</div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="grid">
+    <div class="card portfolio-card" style="background-image:url('images/project1.jpg')"></div>
+    <div class="card portfolio-card" style="background-image:url('images/project2.jpg')"></div>
+    <div class="card portfolio-card" style="background-image:url('images/project3.jpg')"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact / Let's Talk</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Votre nom / Your Name" required>
+    <input type="email" name="email" placeholder="Votre email / Your Email" required>
+    <textarea name="message" rows="4" placeholder="Votre message / Your Message" required></textarea>
+    <label>
+      <input type="checkbox" required> J’accepte les <a href="#cgv">CGV / Terms</a>
+    </label>
+    <button class="btn" type="submit">Envoyer / Send</button>
+  </form>
+
+  <div id="contact-success" style="color:#c5a880;"></div>
+</section>
+
+<section id="cgv">
+  <h2>CGV / Terms</h2>
+
+  <!-- Bouton pour ouvrir le PDF -->
+  <div style="text-align:center; margin-bottom:30px;">
+    <a href="assets/cgv1.pdf" target="_blank" class="btn">
+      📄 Ouvrir les CGV en plein écran
+    </a>
+  </div>
+
+  <!-- Visionneuse PDF -->
+  <div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.5); margin-bottom:40px;">
+    
+  </div>
+
+  <!-- Bloc légal -->
+  <div class="cgv">
+
+    <div class="cgv-card">
+      <h3>🇫🇷 France</h3>
+      <p>
+        Les présentes conditions générales de vente sont soumises au droit français. 
+        Conformément au Code civil et au Code de la consommation, elles définissent les modalités de prestation, 
+        de paiement, de responsabilité et de protection des données personnelles.
+      </p>
+    </div>
+
+    <div class="cgv-card">
+      <h3>🇨🇭 Suisse</h3>
+      <p>
+        Pour les clients domiciliés en Suisse, les prestations sont régies par le droit suisse des obligations (CO). 
+        Les tribunaux compétents sont ceux du domicile du prestataire, sauf disposition légale impérative contraire.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+© 2026 Ludivine Bigot<br><br>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-github"></i>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+emailjs.init("YOUR_USER_ID"); // Remplacez par votre USER ID EmailJS
+
+document.getElementById("contact-form").addEventListener("submit", function(event){
+    event.preventDefault();
+    const successMsg = document.getElementById("contact-success");
+
+    emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID', this)
+    .then(function(){
+        successMsg.style.display = "block";
+        successMsg.textContent = "Merci ! Votre message a été envoyé avec succès à Ludivine.Bigot@proton.me.";
+    }, function(error){
+        successMsg.style.display = "block";
+        successMsg.textContent = "Erreur lors de l'envoi : " + JSON.stringify(error);
+        successMsg.style.color = "#ff4d4d";
+    });
+
+    this.reset();
+});
+
+const btn=document.getElementById("lang-switch");
+const fr=document.querySelectorAll(".lang.fr");
+const en=document.querySelectorAll(".lang.en");
+
+btn.onclick=()=>{
+  if(btn.textContent==="EN"){
+    btn.textContent="FR";
+    fr.forEach(e=>e.classList.remove("active"));
+    en.forEach(e=>e.classList.add("active"));
+  }else{
+    btn.textContent="EN";
+    fr.forEach(e=>e.classList.add("active"));
+    en.forEach(e=>e.classList.remove("active"));
+  }
+};
+</script>
+</body>
+</html>
