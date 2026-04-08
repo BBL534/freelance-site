@@ -65,15 +65,64 @@ const langBtn = document.getElementById('lang-switch');
 const frContent = document.querySelector('.lang.fr');
 const enContent = document.querySelector('.lang.en');
 
-// Fonction de bascule
-langBtn.addEventListener('click', () => {
-  if(langBtn.textContent === "FR"){
-    langBtn.textContent = "EN";
-    frContent.classList.remove('active');
-    enContent.classList.add('active');
-  } else {
-    langBtn.textContent = "FR";
-    frContent.classList.add('active');
-    enContent.classList.remove('active');
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const options = document.querySelectorAll(".lang-switch .option");
+  const slider = document.querySelector(".switch-slider");
+
+  console.log("options:", options.length); // debug
+
+  options.forEach((opt, index) => {
+    opt.addEventListener("click", () => {
+
+      console.log("clicked", index); // debug
+
+      options.forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+
+      slider.style.transform = index === 1 
+        ? "translateX(100%)" 
+        : "translateX(0)";
+    });
+  });
+
+});
+});
+
+emailjs.sendForm(
+  "service_ok7mjwa",
+  "template_ytxahje",
+  form,
+  "--7zPpULQZbrfKkZn"
+);
+
+<script>
+const modal = document.getElementById("cgv-modal");
+const openBtn = document.getElementById("open-cgv");
+const closeBtn = document.querySelector(".close");
+
+openBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  modal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
+</script>
+
+<div style="max-width:700px; margin:40px auto; border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.5);">
+  <iframe 
+    src="assets/cgv1.pdf" 
+    width="100%" 
+    height="400px"
+    style="border:none;">
+  </iframe>
+</div>
